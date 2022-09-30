@@ -1953,7 +1953,7 @@ namespace ExcelPaster
                             if (checkBox_doAll.Checked) reportType = "Renamed Reports";
                             else reportType = "Renamed Report";
                         }
-                        else if (comboBox_ReportType.SelectedIndex == 4)
+                        else if (comboBox_ReportType.SelectedIndex == 5)
                         {
                             success = rG.excelToPDF(comboBox_ReportSource.Text, comboBox_ReportOutput.Text, checkBox_showReport.Checked);
                             reportType = "Excel to PDF";
@@ -2006,7 +2006,7 @@ namespace ExcelPaster
                                 else if (comboBox_ReportType.SelectedIndex == 1)
                                 {
                                     success = rG.GenerateLimerockReport(file, comboBox_HexaneCalc.SelectedIndex, comboBox_ReportOutput.Text, checkBox_showReport.Checked);
-                                    reportType = "Limerock PDF Reports";
+                                    reportType = "RimRock PDF Reports";
                                 }
                                 else if (comboBox_ReportType.SelectedIndex == 2)
                                 {
@@ -2173,6 +2173,18 @@ namespace ExcelPaster
                     panel_hexCalc.Visible = false;
                     panel_ovintivDirectory.Visible = true;
                     label_namingScheme.Visible = true;
+                    break;
+                case 5:
+                    //Excel to PDF
+                    pictureBox1.Image = ExcelPaster.Properties.Resources.Excel_Report;
+                    openFileDialog4.Filter = "Excel Files | *.xlsm , *.xlsx";
+                    openFileDialog4.FileName = "*.xlsm";
+                    panel_renameOptions.Visible = false;
+                    label_renameFileInfo.Visible = false;
+                    panel_sourceFolder.Visible = true;
+                    panel_hexCalc.Visible = true;
+                    panel_ovintivDirectory.Visible = false;
+                    label_namingScheme.Visible = false;
                     break;
                 default:
                     pictureBox1.Image = ExcelPaster.Properties.Resources.No_Report;
